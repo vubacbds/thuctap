@@ -1,0 +1,19 @@
+.head{
+    background-color: #0f4d92;
+    height: 100px;
+
+    
+    width: 100%;
+    /* //set chỉ số này để class này có thể đè lên css khác */
+    z-index: 1;
+
+}
+.foot{
+    margin-top: 12px;
+    background-color: #0f4d92;
+    height: 300px;
+    padding: 20px;
+    display: inline-block;
+    width: 100%;
+
+}

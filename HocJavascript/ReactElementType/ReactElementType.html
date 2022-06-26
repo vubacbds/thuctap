@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>     
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script> <!-- React-DOM khai báo sau React mới hoạt động, là cầu nối giữa React và DOM trên trang web, Còn React-Native là cầu nối giữa React và App -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        
+        //Tạo Type từ Function/Class
+        //Function : Hầu như hay dùng hơn Class, vì Hook đã hỗ trợ rất nhiều
+        function Header() {   //Tên function phải viết hoa chữ cái đầu
+            return (
+                <div className="header">Header</div>
+            )
+        }
+
+        //ClassName
+        class Content extends React.Component {
+            render() {
+                return (
+                    <div className="content">Content</div>
+                )
+            }
+        }
+
+        //Vì không có phần tử con nên gọi function dùng <Header /> cũng được, thay vì <Header> </Header>
+        //Gọi Class cũng tương tự
+        const app = (
+            <div className="wraper">
+                <Header />  
+                <Content />
+                <div className="footer">Footer</div>
+            </div>
+        )
+        
+        ReactDOM.render(app, document.getElementById('root'))
+    </script>
+</body>
+</html>

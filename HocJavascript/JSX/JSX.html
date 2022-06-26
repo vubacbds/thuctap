@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>     
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script> <!-- React-DOM khai báo sau React mới hoạt động, là cầu nối giữa React và DOM trên trang web, Còn React-Native là cầu nối giữa React và App -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>  <!--Link babel chuyển đổi JSX thành ES5-->
+</head>
+<body>
+    <div id="root">
+        
+    </div>
+    <div id="root2"></div>
+    <script type="text/babel">    //Ko có type thì mặc định là "text/javascript" nên JSX sẽ bị lỗi, vì vậy thêm "text/bable" để khi link babel trên hoạt động sẽ mới tìm tới type này để thực thi, và tạo nên 1 <script> mới chưa các câu lệnh chuyển đổi và thực hiện
+       
+       const t = 'test2';
+
+        //Câu lệnh javascript trong cặp dấu {}
+        //Truyền vào đối tượng Style
+        const postItem = 
+        <ul>   
+            <li style = {{color: 'red', fontSize: '30px'}}>Test1</li>    
+            <li>{t}</li>  
+        </ul>
+        
+        //Get root element 
+        const root = document.getElementById('root');
+        const root2 = document.getElementById('root2');
+        
+        //React-DOM
+        ReactDOM.render(postItem, root)   
+        
+
+
+        //JSX render Array
+        const courses = [      //Mảng
+            {name: 'html'},
+            {name: 'css'},
+            {name: 'javascript'}
+        ]
+
+        const jsxarr = 
+        <ul>
+            {
+                courses.map((course,index) => 
+                <li key={index}>{course.name}</li>)    //Gọi tới từng phẩn tử của mảng qua map
+            }
+        </ul>
+        
+        
+
+        //Không render được 2 element cùng 1 lúc, cách khắc phục
+        //Có thẻ Wrap bên ngoài để bao lại
+        const elementMany = (
+            //<div>   : Nếu dùng wrap bằng div sẽ tạo ra thẻ bên ngoài ko cần thiết
+                //React.fragment tạo ra thẻ wrap ảo 
+            <React.Fragment>  
+                <h1>Học JS</h1>
+                <h2>Học React JS</h2>
+            </React.Fragment>
+            //</div>
+        )
+        //1 cách viết khác của Fragment được babel chuyển đổi là
+            //  <> </>   : 2 thẻ rỗng bao bên ngoài là dc
+        ReactDOM.render(elementMany, root2)     //Render vào thẻ div root2
+
+
+        
+    </script>
+</body>
+</html>

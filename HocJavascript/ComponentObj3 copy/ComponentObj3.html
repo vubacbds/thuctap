@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>     
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script> <!-- React-DOM khai báo sau React mới hoạt động, là cầu nối giữa React và DOM trên trang web, Còn React-Native là cầu nối giữa React và App -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>  <!--Link babel chuyển đổi JSX thành ES5-->
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">    
+       
+       //Các kiểu Boolean, Null, Undefined không được render
+       //Kết hợp toán tử Logic để render theo điều kiện
+
+        function App({title, content}) {
+
+            let firstAccess = true
+
+            //Toán tử && trả về về sau khi vế trước đúng, trả về false khi vế trước sai
+            //{firstAccess && <h1>Welcom to</h1>} : thay vào dòng 27
+            
+            //Có truyền vào đối số title thì hiện title, có content thì trả về content
+            //Toán tử || trả về vế trước khi vế trước đúng hay 2 vế đều đúng, trả về vế sau khi vế sau đúng vế trước sai, không trả về gì khi cả 2 ko đúng
+            return (
+                <div id="wrapper">
+                   <h1>{title || content}</h1>
+                </div>
+            )
+        }
+
+        //index.js
+        ReactDOM.render(<App title="Welcom back" content="hello"/>, document.getElementById('root'))
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(206, 206, 206);
+  
+}
+h3{
+  font-weight: 700;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+hr{
+  border: 1px solid black;
+  margin-bottom: 10px;
+}
+fieldset{
+  display: flex;
+  flex-direction: row;
+}
+input{
+  background-color: rgb(51, 53, 177);
+  color: white;
+  border: 1px solid rgb(206, 206, 206);
+  border-radius: 5px;
+  padding: 3px 10px;
+  box-sizing: border-box;
+}
+.container{
+  padding: 100px 400px 0px;
+  height: 400px;
+}
+.register_header{
+  padding-bottom: 100px;
+}
+.register_header p{
+  font-style: italic;
+}
+.toila{
+  margin-right: 20px;
+}
+.role_select{
+  border-radius: 5px;
+}
+.margin_input{
+  margin-left: 150px;
+}
+.sex{
+  margin-bottom: 10px;
+}
+.sex input{
+  margin-right: 5px;
+}
+.sex label{
+  margin-right: 10px;
+}
+.accept{
+  font-weight: 700;
+}
+.flex-btn{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.registerbtn{
+  margin: 0 auto;
+  color: rgb(237, 237, 237);
+  font-weight: 700;
+  font-size: 20px;
+  padding: 3px 30px;
+  border: 2px solid black;
+  background-color: rgb(79, 182, 89);
+  border-radius: 50px;
+}
+.login-1{
+  background-color:#fafafa;
+}
+
+.modify1 {
+  // margin-left: 40px;
+}
+.modify2 {
+width:200px;
+}
+.btnsubmit {
+  width:345px;
+  background-color: rgb(51, 53, 177);
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  // box-sizing: border-box;
+}
+.text-right {
+margin-left: 55px;
+
+}
+
+.qmk {
+margin-left:70px;
+}
+
+.container_register{
+  height: 1100px;
+}
+
+
+

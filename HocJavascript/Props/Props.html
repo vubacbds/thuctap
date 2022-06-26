@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>     
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script> <!-- React-DOM khai báo sau React mới hoạt động, là cầu nối giữa React và DOM trên trang web, Còn React-Native là cầu nối giữa React và App -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>  <!--Link babel chuyển đổi JSX thành ES5-->
+</head>
+<body>
+    <div id="root"></div>
+    <div id="root2"></div>
+    <script type="text/babel">    //Ko có type thì mặc định là "text/javascript" nên JSX sẽ bị lỗi, vì vậy thêm "text/bable" để khi link babel trên hoạt động sẽ mới tìm tới type này để thực thi, và tạo nên 1 <script> mới chưa các câu lệnh chuyển đổi và thực hiện
+       
+       //React Component là các Function
+       //React Element là các thẻ JSX như như đoạn html
+       //Dùng for đổi thành htmlfor : dùng khi nhấn vào label sẽ focus
+       //Prop "key" là prop đặc biệt, không dùng tên là key được
+       //Props cơ bản là đối số của Components
+       //Thêm tham số vào function 
+       //Sử dụng Destructuring
+
+       //PostItem.js   : tạo ra nhiều file để import/export
+       function PostItem({title, img, desc, callback}) {
+            callback(Math.random());
+           return (
+            <div className="post-list">
+                <div className="post-item">
+                    <label htmlFor="email">Email</label>
+                    <input id="email" />
+                    <img
+                        src={img}
+                        alt="Load chưa kịp"
+                    />
+                    <h2 className="post-title">{title}</h2>
+                    <p className="post-desc">{desc}</p>
+                </div>
+            </div>
+           )
+            
+       }
+            
+       //App.js   : import/export vô
+       //Truyền đối số vào function
+        function App() {
+            return (
+                //Gọi lại function
+                //Truyền callback vào hàm
+                <div id="wrapper">
+                    <PostItem 
+                        title = "Học Reac JS"
+                        img = "./ppds.jpg"
+                        desc = "Học nhanh thôi!"
+                        callback = {(random) => {
+                            console.log(random);
+                        }}
+                    />    
+                </div>
+            )
+        }
+
+        //index.js
+        ReactDOM.render(<App />, document.getElementById('root'))
+       
+        //Có thể truyền vào component 1 prop là 'children' để ôm phần con bên trong khi phàn con bên trong là đoạn <div> chứ khong phải là đoạn props thông thường
+            //Xem video ReactContext
+    </script>
+</body>
+</html>

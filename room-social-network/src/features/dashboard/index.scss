@@ -1,0 +1,30 @@
+.logo {
+  text-align: left;
+  font-weight: bold;
+  color: #69e1ff;
+  font-size: 40px;
+  float: left;
+  flex-grow: 1;
+  margin-left: 5px;
+}
+.imgavartar {
+    border: 1px #d4d4d4 solid;
+    padding: 2px;
+    border-radius:50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+}
+
+.site-layout-background {
+  background: #fff;
+}
+
+.a2,.a3{
+  border-right: #c7077d 3px solid;
+}
+
+.editable-row .ant-form-item-explain {
+  position: absolute;
+  top: 100%;
+  font-size: 12px;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>     
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script> <!-- React-DOM khai báo sau React mới hoạt động, là cầu nối giữa React và DOM trên trang web, Còn React-Native là cầu nối giữa React và App -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>  <!--Link babel chuyển đổi JSX thành ES5-->
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">    
+       
+       //Xử lý trường hợp khi nhấn vào một button sẽ vừa có thẻ href để chuyển trang và vừa xử lý một cái gì đó
+        function Button({title, href, onClick}) {  //Dùng destructuring để lấy các phần tử
+            let Component = "button"
+            const props = {}
+
+            if(href) {
+                Component = "a"
+                props.href = href
+            }
+
+            if(onClick) {
+                props.onClick = onClick
+            }
+            
+            return (
+                <Component {...props}>{title}</Component>
+            )
+            
+        }
+        //Props là đối só truyền vào cho các component
+        function App() {
+            return (
+                <div id="wrapper">
+                   <Button
+                    title="Click me"            //Các Props truyền vào sẽ ở trong 1 object
+                    href = "https://meeyland.com"
+                    onClick={() => console.log(Math.random())}
+                   />
+                </div>
+            )
+        }
+
+        //index.js
+        ReactDOM.render(<App />, document.getElementById('root'))
+       
+    </script>
+</body>
+</html>

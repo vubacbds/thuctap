@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>     
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script> <!-- React-DOM khai báo sau React mới hoạt động, là cầu nối giữa React và DOM trên trang web, Còn React-Native là cầu nối giữa React và App -->
+</head>
+<body>
+    <div id="root"></div>
+    <script>
+        const postItem = React.createElement(
+            'div', 
+            {
+                className: 'Post-item'
+            },
+            React.createElement(
+                'h2', 
+                {
+                    title: 'Hoc ReactJS tai F8'
+                },
+                'Hoc ReactJS'
+            ),
+            React.createElement('p',{},'Học ReactJS từ cơ bản tới năng cao')
+            ) 
+        //const h1React = React.createElement(type, props, children,... children n) 
+        console.log(postItem);
+
+        //Get root element 
+        const root = document.getElementById('root');
+        
+        //React-DOM
+        ReactDOM.render(postItem, root)   //Gọi hiển thị các React Element : postItem là ReactElement , root là DOM Element
+
+        //https://babeljs.io/ : Trang test babel 
+            //babel chuyển từ JSX hay ES6 sang ES5
+            //JSX viết giống như HTML
+            //Có thể viết JavaScriot trong JSX bằng cách viết trong cặp dấu {}
+    </script>
+</body>
+</html>
